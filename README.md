@@ -10,7 +10,7 @@
 
 ### Edit `meta.yaml` file 
 
-`title`, `author`. `date`. `titlepage-background` etc... 
+`title`, `author`, `date`, `titlepage-background` etc... 
     
 ### Generate Document 
 
