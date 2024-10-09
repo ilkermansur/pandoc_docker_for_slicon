@@ -10,18 +10,18 @@
 
 - Edit `meta.yaml` file 
 
-# title: "Test Documents"
-# author: "Ilker Mansur"
-# date: "09/10/2024"
-# toc-own-page: "true"
-# fig_align: "center"
-# toc: true
-# lang: en
-# titlepage: true
-# titlepage-background: backgrounds/titlePage.pdf
-# listings-disable-line-numbers: true
-# book: true
-# code-block-font-size: \scriptsize
+title: "Test Documents"
+author: "Ilker Mansur"
+date: "09/10/2024"
+toc-own-page: "true"
+fig_align: "center"
+toc: true
+lang: en
+titlepage: true
+titlepage-background: backgrounds/titlePage.pdf
+listings-disable-line-numbers: true
+book: true
+code-block-font-size: \scriptsize
 
     
 Generate Document 
