@@ -1,4 +1,4 @@
-# pandoc_docker_for_slicon
+# Pandoc Docker for Slicon
 
 ### Generate docker image with using Dockerfile
 
@@ -16,5 +16,6 @@
 
 `pandoc file1.md file2.md file3.md -o output.pdf  --metadata-file=meta.yaml --template eisvogel --highlight-style tango`
 
+---
  PS: file1.md file2.md file3.md represent your files and should be right order. Pdf document consist same order of files in TOC.
 
