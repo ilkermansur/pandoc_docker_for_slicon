@@ -1,0 +1,44 @@
+# Intel işlemciler için amd64 tabanlı Ubuntu imajı kullan
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Gerekli LaTeX paketlerini, yazı tiplerini ve yardımcı araçları yükle
+RUN apt-get update && apt-get install -y \
+    wget \
+    texlive-latex-base \
+    texlive-fonts-recommended \
+    texlive-extra-utils \
+    texlive-latex-extra \
+    texlive-xetex \
+    texlive-fonts-extra \
+    lmodern \
+    ghostscript \
+    librsvg2-bin \
+    imagemagick \
+    fonts-dejavu \
+    fonts-freefont-ttf \
+    fonts-liberation \
+    fonts-font-awesome \
+    fonts-noto \
+    fonts-noto-color-emoji \
+    nano \
+    tree \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Pandoc'un Intel işlemciler için uygun sürümünü indir ve kur
+RUN wget https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-amd64.deb \
+    && dpkg -i pandoc-3.5-1-amd64.deb \
+    && rm pandoc-3.5-1-amd64.deb
+
+# Eisvogel şablonunu indir ve kur
+RUN mkdir -p /root/.local/share/pandoc/templates \
+    && wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/latest/download/Eisvogel.tar.gz \
+    && tar xzf Eisvogel.tar.gz \
+    && mv Eisvogel-3.1.0/eisvogel.latex /root/.local/share/pandoc/templates/ \
+    && rm -rf Eisvogel-3.1.0 \
+    && rm Eisvogel.tar.gz
+
+# Çalışma dizinini ayarla
+WORKDIR /data
