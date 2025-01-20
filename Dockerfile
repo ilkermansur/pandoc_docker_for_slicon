@@ -34,7 +34,9 @@ RUN wget https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-arm64.
 RUN mkdir -p /root/.local/share/pandoc/templates \
     && wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/latest/download/Eisvogel.tar.gz \
     && tar xzf Eisvogel.tar.gz \
-    && mv eisvogel.latex /root/.local/share/pandoc/templates/ \
+    && mv Eisvogel-3.1.0/eisvogel.latex /root/.local/share/pandoc/templates/ \
+    && rm -rf Eisvogel-3.1.0 \
     && rm Eisvogel.tar.gz
+
 
 WORKDIR /data
