@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y \
     fonts-font-awesome \
     fonts-noto \
     fonts-noto-color-emoji \
+    nano \
+    tree \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
